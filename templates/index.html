@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS Autoinstaller</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/static/img/logo.svg" alt="Logo">
+            <h1>OS Autoinstaller</h1>
+        </div>
+
+        <div class="form-container">
+            <form id="isoCreationForm">
+                <div class="form-section">
+                    <h2>Server Details</h2>
+                    <div class="form-group">
+                        <label for="idracIp">Server IP Address*</label>
+                        <input type="text" id="idracIp" name="idracIp" placeholder="10.219.106.203" required>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="idracUser">Server Username*</label>
+                                <input type="text" id="idracUser" name="idracUser" placeholder="root" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="idracPassword">Server Password*</label>
+                                <input type="password" id="idracPassword" name="idracPassword" placeholder="Enter password" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>OS Selection</h2>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="osType">Operating System*</label>
+                                <select id="osType" name="osType" required>
+                                    <option value="CentOS">CentOS</option>
+                                    <option value="Ubuntu" disabled>Ubuntu (Coming Soon)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="osVersion">OS Version*</label>
+                                <select id="osVersion" name="osVersion" required>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10" selected>10</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Network Configuration</h2>
+                    <div class="form-group">
+                        <label for="ipAddress">IP Address*</label>
+                        <input type="text" id="ipAddress" name="ipAddress" placeholder="xxx.xxx.xxx.xxx" required>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="subnetMask">Subnet Mask*</label>
+                                <input type="text" id="subnetMask" name="subnetMask" placeholder="xxx.xxx.xxx.xxx" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="gateway">Gateway*</label>
+                                <input type="text" id="gateway" name="gateway" placeholder="xxx.xxx.xxx.xxx" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dnsServers">DNS Servers*</label>
+                        <input type="text" id="dnsServers" name="dnsServers" placeholder="8.8.8.8, 8.8.4.4" required>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="button" id="installToolsBtn" class="button button-secondary">Install Tools</button>
+                    <button type="submit" id="createIsoBtn" class="button button-primary">Create ISO</button>
+                </div>
+            </form>
+
+            <div id="spinner-container" class="spinner-container hidden">
+                <div class="spinner"></div>
+            </div>
+
+            <div id="logContainer" class="log-container hidden">
+                <div id="logs"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html> 

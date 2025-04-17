@@ -1,0 +1,249 @@
+/* Modern, beautiful UI styling */
+:root {
+  --primary-color: #1e9709;
+  --primary-hover: #25910a;
+  --secondary-color: #6c757d;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #148907;
+  --light-color: #f9fafb;
+  --dark-color: #1f2937;
+  --border-color: #e5e7eb;
+  --bg-color: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-color: #374151;
+  --text-muted: #6b7280;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--card-bg);
+}
+
+.header {
+  background: linear-gradient(135deg, #0a5c36, #0d7a48);
+  color: white;
+  padding: 25px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form-container {
+  padding: 30px;
+}
+
+.form-section {
+  background-color: var(--light-color);
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border: 1px solid var(--border-color);
+}
+
+.form-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: var(--dark-color);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.15);
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.col {
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.button-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.button-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Log container styling */
+.log-container {
+  margin-top: 30px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: var(--dark-color);
+  color: #e5e7eb;
+  border-radius: 8px;
+  padding: 15px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.log-entry {
+  margin-bottom: 5px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Log message types */
+.log-info {
+  color: var(--info-color);
+}
+
+.log-success {
+  color: var(--success-color);
+}
+
+.log-warning {
+  color: var(--warning-color);
+}
+
+.log-error {
+  color: var(--danger-color);
+}
+
+/* Loading spinner */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .button {
+    width: 100%;
+  }
+} 
