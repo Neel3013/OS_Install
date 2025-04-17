@@ -41,9 +41,7 @@ pip install -r requirements.txt
 
 1. Update the Proxmox server configuration in `server.py`:
 ```python
-proxmox_ip = "10.219.82.112"
-proxmox_user = "root"
-proxmox_password = "Jtaclab123"
+
 ```
 
 2. Make sure the Proxmox server has the required CentOS ISO files in `/var/www/html/`:
